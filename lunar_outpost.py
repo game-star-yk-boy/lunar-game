@@ -88,6 +88,14 @@ for day in range(1, 7):
 		break
 else:
 	print("\nMission success! The crew survived all six days.")
+	supply_score = oxygen + food + power
+	print("Remaining supply score:", supply_score)
+	if supply_score >= 25:
+		print("Gold medal! Excellent supplies left behind.")
+	elif supply_score >= 15:
+		print("Silver medal! Good supplies left behind.")
+	else:
+		print("Bronze medal! The crew survived the mission.")
 	show_status(day, oxygen, food, power, solar_output, shield_layers, radiation_danger)
 
 
