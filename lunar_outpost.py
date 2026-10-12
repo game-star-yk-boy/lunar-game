@@ -70,4 +70,24 @@ for day in range(1, 7):
 	radiation_increase = max(0, 10 - 3 * shield_layers)
 	radiation_danger += radiation_increase
 	print("Radiation danger increased by", radiation_increase, "after shield protection.")
+	if day == 3:
+		radiation_danger += 5
+		print("Solar storm! Radiation danger increased by 5.")
+
+	if oxygen <= 0:
+		print("Mission failed: oxygen ran out.")
+		break
+	elif food <= 0:
+		print("Mission failed: food ran out.")
+		break
+	elif power < 0:
+		print("Mission failed: power dropped below zero.")
+		break
+	elif radiation_danger > 50:
+		print("Mission failed: radiation danger went above 50.")
+		break
+else:
+	print("\nMission success! The crew survived all six days.")
+	show_status(day, oxygen, food, power, solar_output, shield_layers, radiation_danger)
+
 
